@@ -1,15 +1,15 @@
 import './App.css';
 import {useEffect, useState}  from 'react'
 import axios from 'axios';
-import Form from './Form';
-import Displayphotos from './Displayphotos';
+import Form from './Components/Form';
+import Displayphotos from './Components/Displayphotos';
 
 function App() {
   
   const [minifigs, setMinifigs] = useState ([])
   const [queryMiniFig, setQueryMinifig] = useState("")
-
-
+ 
+  
   const handleFormSubmit =(event) => {
     event.preventDefault()
     setQueryMinifig(event.target[0].value)
@@ -37,19 +37,29 @@ function App() {
       )
     } 
   }
-  
-  
-, [queryMiniFig])
+  , [queryMiniFig])
   
   return (
-    <div className="App">
-      <h1>LEGO Minifigure Search</h1>
-      <Form
-        handleFormSubmit={handleFormSubmit}
-        // handleInputChange={handleInputChange}
-      />
-     <Displayphotos results={minifigs}/>
-    </div>
+    
+  <section className='wrapper'>
+      
+      <div className="App">
+        
+        <img className="logo" src="https://fontmeme.com/permalink/230203/516bfcab31265e95580399d30ac6a00d.png" alt="lego-font" border="0"/>
+        
+        <div className='form'>
+          <Form
+           handleFormSubmit={handleFormSubmit}
+          />
+        </div>
+        
+        <div className='minifigs'>
+          <Displayphotos results={minifigs}/>
+        </div>
+
+      </div>
+  </section>
+
   );
 }
 
