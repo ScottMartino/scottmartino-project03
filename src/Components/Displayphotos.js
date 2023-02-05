@@ -1,7 +1,5 @@
 const Displayphotos = (props) => {
-    
 return (
-        
         <div>
         {
          props.results
@@ -16,8 +14,7 @@ return (
                 )
             })
         }
-        </div>
-        
+        </div>    
     )
 }
 

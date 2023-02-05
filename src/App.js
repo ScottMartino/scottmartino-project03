@@ -1,18 +1,19 @@
-import './App.css';
+
 import {useEffect, useState}  from 'react'
 import axios from 'axios';
 import Form from './Components/Form';
 import Displayphotos from './Components/Displayphotos';
+import './App.css';
 
 function App() {
   
   const [minifigs, setMinifigs] = useState ([])
   const [queryMiniFig, setQueryMinifig] = useState("")
  
-  
   const handleFormSubmit =(event) => {
     event.preventDefault()
     setQueryMinifig(event.target[0].value)
+    event.target[0].value = ('')
   }
 
    useEffect(()=>{
@@ -23,13 +24,24 @@ function App() {
         params: {
           key: 'a4a279c7f86d60b0557cbc70201686e9',
           search: queryMiniFig,
-          page_size: 10,
+          page_size: 20,
         },
       }).then((response) => {
 
         const minifigresults = response.data.results
-        setMinifigs(minifigresults)
 
+        function shuffle () {
+          const random = minifigresults
+          random.sort(()=>
+            Math.floor(Math.random()*20)
+          )
+          return random
+        }
+
+        setMinifigs(shuffle())
+
+        setQueryMinifig('')
+        
         if (response.data.count === 0){
           alert ("No Minifigures Match")
         }
@@ -40,7 +52,6 @@ function App() {
   , [queryMiniFig])
   
   return (
-    
   <section className='wrapper'>
       
       <div className="App">
@@ -59,7 +70,6 @@ function App() {
 
       </div>
   </section>
-
   );
 }
 
