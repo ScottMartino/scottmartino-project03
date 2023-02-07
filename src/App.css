@@ -19,11 +19,12 @@ html { box-sizing: border-box;}
 a{
   text-decoration: none;
   color: #FD811F;
+  
 }
 
 a:hover,
 a:focus{
-  color: #1A1746;
+  color: #FD811F;
 }
 
 .form{
@@ -36,7 +37,8 @@ a:focus{
 
 label, p{
   font-family: "Noto Sans", sans-serif;
-  font-size: 1.25em;
+  font-size: 1.5em;
+  color: #FD811F;
 }
 
 button{
@@ -61,4 +63,8 @@ button:focus{
 .input{
   margin: 2%;
   padding: 1%;
+}
+
+footer{
+  text-align: center;
 }

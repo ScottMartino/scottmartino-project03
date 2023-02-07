@@ -69,6 +69,10 @@ function App() {
         </div>
 
       </div>
+      <footer>
+        <p>Created at <a href='https://junocollege.com' target="_blank"
+        rel="noreferrer">June College</a></p>
+      </footer>
   </section>
   );
 }
