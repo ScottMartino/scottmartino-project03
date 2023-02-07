@@ -16,7 +16,7 @@ function App() {
     event.target[0].value = ('')
   }
 
-   useEffect(()=>{
+  useEffect(()=>{
     if (queryMiniFig !== ""){
       
       axios({
@@ -53,21 +53,16 @@ function App() {
   
   return (
   <section className='wrapper'>
-      
       <div className="App">
-        
         <img className="logo" src="https://fontmeme.com/permalink/230203/516bfcab31265e95580399d30ac6a00d.png" alt="lego-font" border="0"/>
-        
         <div className='form'>
           <Form
            handleFormSubmit={handleFormSubmit}
           />
         </div>
-        
         <div className='minifigs'>
           <Displayphotos results={minifigs}/>
         </div>
-
       </div>
       <footer>
         <p>Created at <a href='https://junocollege.com' target="_blank"
