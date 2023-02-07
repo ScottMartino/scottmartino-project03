@@ -66,7 +66,7 @@ function App() {
       </div>
       <footer>
         <p>Created at <a href='https://junocollege.com' target="_blank"
-        rel="noreferrer">June College</a></p>
+        rel="noreferrer">Juno College</a></p>
       </footer>
   </section>
   );
