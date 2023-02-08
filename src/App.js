@@ -18,7 +18,6 @@ function App() {
 
   useEffect(()=>{
     if (queryMiniFig !== ""){
-      
       axios({
         url: 'https://rebrickable.com/api/v3/lego/minifigs/',
         params: {
@@ -27,9 +26,7 @@ function App() {
           page_size: 20,
         },
       }).then((response) => {
-
         const minifigresults = response.data.results
-
         function shuffle () {
           const random = minifigresults
           random.sort(()=>
@@ -37,11 +34,8 @@ function App() {
           )
           return random
         }
-
         setMinifigs(shuffle())
-
         setQueryMinifig('')
-        
         if (response.data.count === 0){
           alert ("No Minifigures Match")
         }
@@ -69,7 +63,7 @@ function App() {
         rel="noreferrer">Juno College</a></p>
       </footer>
   </section>
-  );
+  )
 }
 
 export default App;
